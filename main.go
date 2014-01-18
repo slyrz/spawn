@@ -1,8 +1,10 @@
 // Copyright 2014, The Spawn Developers.
 // Released under MIT License.
 
-// Package spawn provides multiprocessing functionality. It allows
-// distributing tasks over multiple processes.
+// Package spawn provides multiprocessing funcionality for the
+// Go programming language. It offers a small set of functions that
+// allow spawning processes and distributing tasks among them.
+
 package spawn
 
 import (

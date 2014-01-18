@@ -2,13 +2,14 @@
 
 *Process-based parallelism for the Go programming language*
 
-The spawn package provides multiprocessing funcionality. It
-allows spawning processes and distributing tasks among them.
+Package spawn provides multiprocessing funcionality for the
+Go programming language. It offers a small set of functions that
+allow spawning processes and distributing tasks among them.
 
 ## Quickstart
 
 The following example shows how to calculate the squares of the
-first 1000 numbers across 4 processes.
+first 1000 natural numbers across 4 processes.
 
 ```go
 package main
@@ -37,8 +38,9 @@ func main() {
     close(spawn.Task)
   })
 
-  // Each worker process receives tasks, performs a heavy computation (x^2)
-  // and sends the processed tasks back to our main process.
+  // The work function runs in the spawned processes. It receives tasks,
+  // performs a heavy computation (x^2) and sends the processed tasks
+  // as results back to our main process.
   spawn.Work(func() {
     for task := range spawn.Task {
       val := task.(int)
